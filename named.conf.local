@@ -1,0 +1,65 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+// ACL
+
+acl internals {
+	127.0.0.1;
+	192.168.1.0/24;
+};
+
+
+// KEY
+include "/etc/bind/envs_msT.key";
+include "/etc/bind/tilde_msT.key";
+
+include "/etc/bind/letsencrypt_U.key";
+
+
+// SERVER
+server 51.79.32.63 { keys { tilde_msT; }; };      // ns1.tildeverse.net
+//server 167.114.154.31 use "ownercheck"-record   // ns2.tildeverse.net
+
+server 139.59.215.24 { keys { envs_msT; }; };     // ns1.tildenic.org
+server 149.56.184.112 { keys { envs_msT; }; };    // ns2.tildenic.org
+
+
+// ZONES
+
+zone "envs.net" {
+	type master;
+	file "/etc/bind/zones/db.envs.net";
+	//auto-dnssec maintain;
+	//inline-signing yes;
+	notify explicit;
+	also-notify { 51.79.32.63; 167.114.154.31; };
+	allow-transfer { 127.0.0.1; 167.114.154.31; key tilde_msT; };
+	update-policy { grant letsencrypt_U name _acme-challenge.envs.net. txt; };
+};
+
+zone "envs.sh" {
+	type master;
+	file "/etc/bind/zones/db.envs.sh";
+	//auto-dnssec maintain;
+	//inline-signing yes;
+	notify explicit;
+	also-notify { 51.79.32.63; 167.114.154.31; };
+	allow-transfer { 127.0.0.1; 167.114.154.31; key tilde_msT; };
+	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
+};
+
+zone "envs.tilde" {
+	type master;
+	file "/etc/bind/zones/db.envs.tilde";
+	//auto-dnssec maintain;
+	//inline-signing yes;
+	notify explicit;
+	also-notify { 51.79.32.63; 167.114.154.31; 139.59.215.24; 149.56.184.112; };
+	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
+	update-policy { grant letsencrypt_U name _acme-challenge.envs.tilde. txt; };
+};

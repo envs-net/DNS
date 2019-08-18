@@ -1,0 +1,64 @@
+options {
+	directory "/var/cache/bind";
+
+	managed-keys-directory "/var/cache/bind";
+	dump-file 	"/var/cache/bind/cache_dump.db";
+	statistics-file "/var/cache/bind/bind_stats.txt";
+	memstatistics-file "/var/cache/bind/bind_mem_stats.txt";
+
+	// If there is a firewall between you and nameservers you want
+	// to talk to, you may need to fix the firewall to allow multiple
+	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+	// If your ISP provided one or more IP addresses for stable
+	// nameservers, you probably want to use them as forwarders.
+	// Uncomment the following block, and insert the addresses replacing
+	// the all-0's placeholder.
+
+	// forwarders {
+	// 	0.0.0.0;
+	// };
+
+	//========================================================================
+	// If BIND logs error messages about the root key being expired,
+	// you will need to update your keys.  See https://www.isc.org/bind-keys
+	//========================================================================
+	dnssec-enable yes;
+	dnssec-validation auto;
+
+	key-directory "/etc/bind/keys/";
+
+	// Do not make public version of BIND
+	version none;
+
+	auth-nxdomain no; # conform to RFC1035
+
+	recursive-clients 4096;
+
+//	edns-udp-size 4096;
+//	max-udp-size 512;
+
+	listen-on-v6 { none; };
+	listen-on { any; };
+
+
+	allow-transfer { none; };
+	allow-update { none; };
+
+	allow-query { any; };
+	allow-query-cache { internals; };
+	allow-recursion { internals; };
+};
+
+logging{
+	channel simple_log {
+		file "/var/log/named/bind.log" versions 3 size 5m;
+		severity warning;
+		print-time yes;
+		print-severity yes;
+		print-category yes;
+	};
+	category default{
+		simple_log;
+	};
+};

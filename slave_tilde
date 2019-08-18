@@ -1,0 +1,157 @@
+// Tilde Zones - ( ben@tilde.team )
+
+
+zone "tildeverse.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tildeverse.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tildeverse.net" {
+	type slave;
+	file "/etc/bind/slaves/db.tildeverse.net";
+	masters { 51.79.32.63; };
+};
+
+
+zone "fuckup.club" {
+	type slave;
+	file "/etc/bind/slaves/db.fuckup.club";
+	masters { 51.79.32.63; };
+};
+
+
+zone "nand.pub" {
+	type slave;
+	file "/etc/bind/slaves/db.nand.pub";
+	masters { 51.79.32.63; };
+};
+
+zone "nand.sh" {
+	type slave;
+	file "/etc/bind/slaves/db.nand.sh";
+	masters { 51.79.32.63; };
+};
+
+zone "nand.team" {
+	type slave;
+	file "/etc/bind/slaves/db.nand.team";
+	masters { 51.79.32.63; };
+};
+
+zone "nand.zone" {
+	type slave;
+	file "/etc/bind/slaves/db.nand.zone";
+	masters { 51.79.32.63; };
+};
+
+
+zone "tild3.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tild3.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tild3.club" {
+	type slave;
+	file "/etc/bind/slaves/db.tild3.club";
+	masters { 51.79.32.63; };
+};
+
+
+zone "tilde.chat" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.chat";
+	masters { 51.79.32.63; };
+};
+
+zone "tildegit.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tildegit.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.life" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.life";
+	masters { 51.79.32.63; };
+};
+
+zone "tildenet.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tildenet.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.news" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.news";
+	masters { 51.79.32.63; };
+};
+
+zone "tildenic.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tildenic.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.ninja" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.ninja";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.pizza" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.pizza";
+	masters { 51.79.32.63; };
+};
+
+zone "tilderadio.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tilderadio.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.site" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.site";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.team" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.team";
+	masters { 51.79.32.63; };
+};
+
+zone "tildeteam.org" {
+	type slave;
+	file "/etc/bind/slaves/db.tildeteam.org";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.wiki" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.wiki";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.wtf" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.wtf";
+	masters { 51.79.32.63; };
+};
+
+zone "tilde.zone" {
+	type slave;
+	file "/etc/bind/slaves/db.tilde.zone";
+	masters { 51.79.32.63; };
+};
+
+
+zone "ttm.sh" {
+	type slave;
+	file "/etc/bind/slaves/db.ttm.sh";
+	masters { 51.79.32.63; };
+};
