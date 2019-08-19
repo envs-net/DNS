@@ -15,7 +15,6 @@ acl internals {
 
 
 // KEY
-include "/etc/bind/envs_msT.key";
 include "/etc/bind/tilde_msT.key";
 include "/etc/bind/letsencrypt_U.key";
 
