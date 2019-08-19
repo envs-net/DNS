@@ -25,7 +25,6 @@ options {
 	//========================================================================
 	dnssec-enable yes;
 	dnssec-validation auto;
-	dnssec-lookaside auto;
 
 	key-directory "/etc/bind/keys/";
 
