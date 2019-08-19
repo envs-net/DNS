@@ -16,9 +16,8 @@ chmod 400 envs_msT.key tilde_msT.key letsencrypt_U.key
 chmod 600 Kenvs_mst.* Ktilde_mst.* Kletsencrypt_u.*
 
 chown root:bind "$BINDIR"/slave_tilde
+chmod 644 "$BINDIR"/slave_tilde
 
-test ! -d "$BINDIR"/keys && mkdir -p "$BINDIR"/keys
-test ! -d "$BINDIR"/zones && mkdir -p "$BINDIR"/zones
 test ! -d "$BINDIR"/slaves && mkdir -p "$BINDIR"/slaves
 chown -R bind:bind "$BINDIR"/zones "$BINDIR"/slaves
 chmod 755 "$BINDIR"/zones

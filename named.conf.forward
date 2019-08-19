@@ -1,7 +1,6 @@
 //
 // Forward Zones
 
-
 zone "tilde." IN {
 	type forward;
 	forward only;
