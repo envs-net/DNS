@@ -17,16 +17,14 @@ acl internals {
 // KEY
 include "/etc/bind/envs_msT.key";
 include "/etc/bind/tilde_msT.key";
-
 include "/etc/bind/letsencrypt_U.key";
 
 
 // SERVER
-server 51.79.32.63 { keys { tilde_msT; }; };      // ns1.tildeverse.net
-//server 167.114.154.31 use "ownercheck"-record   // ns2.tildeverse.net
-
-server 139.59.215.24 { keys { envs_msT; }; };     // ns1.tildenic.org
-server 149.56.184.112 { keys { envs_msT; }; };    // ns2.tildenic.org
+server 51.79.32.63 { keys { tilde_msT; }; };  // ns1.tildeverse.net
+//server 167.114.154.31 //"ownercheck"-record // ns2.tildeverse.net
+//server 139.59.215.24  // ns1.tildenic.org
+//server 149.56.184.112 // ns2.tildenic.org
 
 
 // ZONES
@@ -60,6 +58,6 @@ zone "envs.tilde" {
 	//inline-signing yes;
 	notify explicit;
 	also-notify { 51.79.32.63; 167.114.154.31; 139.59.215.24; 149.56.184.112; };
-	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
+	allow-transfer { 127.0.0.1; key tilde_msT; 167.114.154.31; 139.59.215.24; 149.56.184.112; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.tilde. txt; };
 };
