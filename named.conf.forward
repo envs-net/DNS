@@ -4,5 +4,5 @@
 zone "tilde." IN {
 	type forward;
 	forward only;
-	forwarders { 139.59.215.24; 149.56.184.112; };
+	forwarders { 149.56.184.112; 213.239.234.117; };
 };
