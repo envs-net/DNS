@@ -1,5 +1,5 @@
 $TTL 28800  ; 8 hours
-envs.sh.        IN SOA  envs.net. root.envs.net. (
+envs.o.        IN SOA  envs.net. root.envs.net. (
                 2019100101  ; Serial
                 10800       ; Refresh
                 3600        ; Retry
@@ -17,8 +17,8 @@ envs.sh.        IN SOA  envs.net. root.envs.net. (
             SSHFP 3 2 5340ba48a19751f96f7b5ea6da5e0a58174b2c0456e8ef13886599b17014da2e
             SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
-$ORIGIN envs.sh.
+$ORIGIN envs.o.
 *               A       89.163.145.170
 ownercheck      TXT     "4b87cebc"
 $TTL 120    ; 2 minutes
-_acme-challenge TXT "nagXuRRPXr5qap349w8KtFHbSDOuhseozptmI3_yMG8"
+_acme-challenge TXT ""

@@ -21,27 +21,9 @@ zone "fuckup.club" {
 };
 
 
-zone "nand.pub" {
-	type slave;
-	file "/etc/bind/slaves/db.nand.pub";
-	masters { 51.79.32.63; };
-};
-
 zone "nand.sh" {
 	type slave;
 	file "/etc/bind/slaves/db.nand.sh";
-	masters { 51.79.32.63; };
-};
-
-zone "nand.team" {
-	type slave;
-	file "/etc/bind/slaves/db.nand.team";
-	masters { 51.79.32.63; };
-};
-
-zone "nand.zone" {
-	type slave;
-	file "/etc/bind/slaves/db.nand.zone";
 	masters { 51.79.32.63; };
 };
 
@@ -49,12 +31,6 @@ zone "nand.zone" {
 zone "tild3.org" {
 	type slave;
 	file "/etc/bind/slaves/db.tild3.org";
-	masters { 51.79.32.63; };
-};
-
-zone "tild3.club" {
-	type slave;
-	file "/etc/bind/slaves/db.tild3.club";
 	masters { 51.79.32.63; };
 };
 
@@ -134,12 +110,6 @@ zone "tildeteam.org" {
 zone "tilde.wiki" {
 	type slave;
 	file "/etc/bind/slaves/db.tilde.wiki";
-	masters { 51.79.32.63; };
-};
-
-zone "tilde.wtf" {
-	type slave;
-	file "/etc/bind/slaves/db.tilde.wtf";
 	masters { 51.79.32.63; };
 };
 

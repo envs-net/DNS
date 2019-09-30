@@ -9,8 +9,15 @@
 // ACL
 
 acl internals {
-	127.0.0.1;
-	192.168.1.0/24;
+	127.0.0.1; 192.168.1.0/24;
+};
+
+acl notifys {
+	51.79.32.63; 167.114.154.31; 37.187.251.136; 37.187.168.234;
+}
+
+acl transfers {
+	127.0.0.1; key tilde_msT; 51.79.32.63; 37.187.251.136; 37.187.168.234;
 };
 
 
@@ -22,6 +29,12 @@ include "/etc/bind/letsencrypt_U.key";
 // SERVER
 server 51.79.32.63 { keys { tilde_msT; }; };   // ns1.tildeverse.net
 //server 167.114.154.31  //"ownercheck"-record // ns2.tildeverse.net
+
+//domaindiscount24
+//server 37.187.251.136
+//server 37.187.168.234
+
+// TILDE INTRA-NET
 //server 149.56.184.112  // ns1.tildenic.org
 //server 213.239.234.117 // ns2.tildenic.org
 
@@ -34,8 +47,8 @@ zone "envs.net" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; 167.114.154.31; };
-	allow-transfer { 127.0.0.1; 167.114.154.31; key tilde_msT; };
+	also-notify { notifys; };
+	allow-transfer { transfers; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.net. txt; };
 };
 
@@ -45,11 +58,23 @@ zone "envs.sh" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; 167.114.154.31; };
-	allow-transfer { 127.0.0.1; 167.114.154.31; key tilde_msT; };
+	also-notify { notifys; };
+	allow-transfer { transfers; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
 };
 
+zone "envs.o" {
+	type master;
+	file "/etc/bind/zones/db.envs.o";
+	//auto-dnssec maintain;
+	//inline-signing yes;
+	notify explicit;
+	also-notify { notifys; };
+	allow-transfer { transfers; };
+	update-policy { grant letsencrypt_U name _acme-challenge.envs.o. txt; };
+};
+
+// TILDE INTRA-NET
 zone "envs.tilde" {
 	type master;
 	file "/etc/bind/zones/db.envs.tilde";

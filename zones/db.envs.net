@@ -1,13 +1,14 @@
 $TTL 28800  ; 8 hours
 envs.net.       IN SOA  envs.net. root.envs.net. (
-                2019081811  ; serial
+                2019100101  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
                 28800 )     ; minimum (8 hours)
             NS  envs.net.
             NS  ns1.tildeverse.net.
-            NS  ns2.tildeverse.net.
+            NS  dns1.nsdns.info.
+            NS  dns2.nsdns.info.
             A   89.163.145.170
             MX  10 mail.envs.net.
             TXT "v=spf1 a mx ip4:5.199.136.29 ip4:5.199.130.141 ~all"
