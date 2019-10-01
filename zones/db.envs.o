@@ -1,6 +1,6 @@
 $TTL 28800  ; 8 hours
 envs.o.        IN SOA  envs.net. root.envs.net. (
-                2019100102  ; Serial
+                2019100103  ; Serial
                 10800       ; Refresh
                 3600        ; Retry
                 604800      ; Expire
@@ -17,6 +17,5 @@ envs.o.        IN SOA  envs.net. root.envs.net. (
             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
 $ORIGIN envs.o.
 *               A       89.163.145.170
-ownercheck      TXT     "4b87cebc"
 $TTL 120    ; 2 minutes
 _acme-challenge TXT ""

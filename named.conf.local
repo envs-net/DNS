@@ -40,7 +40,7 @@ zone "envs.net" {
 	//inline-signing yes;
 	notify explicit;
 	also-notify { 51.79.32.63; 167.114.154.31; 37.187.251.136; 37.187.168.234; };
-	allow-transfer { 127.0.0.1; key tilde_msT; 51.79.32.63; 37.187.251.136; 37.187.168.234; };
+	allow-transfer { 127.0.0.1; key tilde_msT; 167.114.154.31; 37.187.251.136; 37.187.168.234; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.net. txt; };
 };
 
@@ -51,7 +51,7 @@ zone "envs.sh" {
 	//inline-signing yes;
 	notify explicit;
 	also-notify { 51.79.32.63; 167.114.154.31; 37.187.251.136; 37.187.168.234; };
-	allow-transfer { 127.0.0.1; key tilde_msT; 51.79.32.63; 37.187.251.136; 37.187.168.234; };
+	allow-transfer { 127.0.0.1; key tilde_msT; 167.114.154.31; 37.187.251.136; 37.187.168.234; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
 };
 
@@ -61,8 +61,8 @@ zone "envs.o" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; 167.114.154.31; };
-	allow-transfer { 127.0.0.1; key tilde_msT; 51.79.32.63; };
+	also-notify { 51.79.32.63; };
+	allow-transfer { 127.0.0.1; key tilde_msT; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.o. txt; };
 };
 
@@ -73,7 +73,7 @@ zone "envs.tilde" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; 167.114.154.31; 149.56.184.112; 213.239.234.117; };
-	allow-transfer { 127.0.0.1; 167.114.154.31; key tilde_msT; 149.56.184.112; 213.239.234.117; };
+	also-notify { 51.79.32.63; 149.56.184.112; 213.239.234.117; };
+	allow-transfer { 127.0.0.1; key tilde_msT; 149.56.184.112; 213.239.234.117; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.tilde. txt; };
 };
