@@ -1,0 +1,26 @@
+// ENVS Zones
+
+
+zone "envs.net" {
+	type slave;
+	file "/etc/bind/slaves/db.envs.net";
+	masters { 89.163.145.170; };
+};
+
+zone "envs.sh" {
+	type slave;
+	file "/etc/bind/slaves/db.envs.sh";
+	masters { 89.163.145.170; };
+};
+
+zone "envs.o" {
+	type slave;
+	file "/etc/bind/slaves/db.envs.o";
+	masters { 89.163.145.170; };
+};
+
+zone "envs.tilde" {
+	type slave;
+	file "/etc/bind/slaves/db.envs.tilde";
+	masters { 89.163.145.170; };
+};

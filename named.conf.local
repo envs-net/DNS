@@ -16,62 +16,14 @@ acl internals {
 // KEY
 include "/etc/bind/envs_msT.key";
 include "/etc/bind/tilde_msT.key";
-include "/etc/bind/letsencrypt_U.key";
+//include "/etc/bind/letsencrypt_U.key";
 
 
 // SERVER
-//server 89.163.145.170 { keys { envs_msT; }; }; // ns1.envs.net
-server 78.31.64.115 { keys { envs_msT; }; };     // ns2.envs.net
+server 89.163.145.170 { keys { envs_msT; }; };   // ns1.envs.net
+//server 78.31.64.115 { keys { envs_msT; }; };   // ns2.envs.net
 server 51.79.32.63 { keys { tilde_msT; }; };     // ns1.tildeverse.net
 
 // TILDE INTRA-NET
 //server 149.56.184.112  // ns1.tildenic.org
 //server 213.239.234.117 // ns2.tildenic.org
-
-
-// ZONES
-
-zone "envs.net" {
-	type master;
-	file "/etc/bind/zones/db.envs.net";
-	//auto-dnssec maintain;
-	//inline-signing yes;
-	notify explicit;
-	also-notify { 51.79.32.63; 78.31.64.115; };
-	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
-	update-policy { grant letsencrypt_U name _acme-challenge.envs.net. txt; };
-};
-
-zone "envs.sh" {
-	type master;
-	file "/etc/bind/zones/db.envs.sh";
-	//auto-dnssec maintain;
-	//inline-signing yes;
-	notify explicit;
-	also-notify { 51.79.32.63; 78.31.64.115; };
-	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
-	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
-};
-
-zone "envs.o" {
-	type master;
-	file "/etc/bind/zones/db.envs.o";
-	//auto-dnssec maintain;
-	//inline-signing yes;
-	notify explicit;
-	also-notify { 51.79.32.63; 78.31.64.115; };
-	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
-	update-policy { grant letsencrypt_U name _acme-challenge.envs.o. txt; };
-};
-
-// TILDE INTRA-NET
-zone "envs.tilde" {
-	type master;
-	file "/etc/bind/zones/db.envs.tilde";
-	//auto-dnssec maintain;
-	//inline-signing yes;
-	notify explicit;
-	also-notify { 51.79.32.63; 149.56.184.112; 213.239.234.117; };
-	allow-transfer { 127.0.0.1; key tilde_msT; 149.56.184.112; 213.239.234.117; };
-	update-policy { grant letsencrypt_U name _acme-challenge.envs.tilde. txt; };
-};
