@@ -14,18 +14,15 @@ acl internals {
 
 
 // KEY
+include "/etc/bind/envs_msT.key";
 include "/etc/bind/tilde_msT.key";
 include "/etc/bind/letsencrypt_U.key";
 
 
 // SERVER
-server 51.79.32.63 { keys { tilde_msT; }; };   // ns1.tildeverse.net
-//server 167.114.154.31  //"ownercheck"-record // ns2.tildeverse.net
-
-//domaindiscount24
-//server 37.187.251.136  // ns1-eu.key-systems.net
-//server 37.187.168.234  // ns2-eu.key-systems.net
-//server 51.68.180.207   // ns3-eu.key-systems.net
+//server 89.163.145.170 { keys { envs_msT; }; }; // ns1.envs.net
+server 78.31.64.115 { keys { envs_msT; }; };     // ns2.envs.net
+server 51.79.32.63 { keys { tilde_msT; }; };     // ns1.tildeverse.net
 
 // TILDE INTRA-NET
 //server 149.56.184.112  // ns1.tildenic.org
@@ -40,8 +37,8 @@ zone "envs.net" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; 167.114.154.31; 37.187.251.136; 37.187.168.234; 51.68.180.207; };
-	allow-transfer { 127.0.0.1; key tilde_msT; 167.114.154.31; 37.187.251.136; 37.187.168.234; 51.68.180.207; };
+	also-notify { 51.79.32.63; 78.31.64.115; };
+	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.net. txt; };
 };
 
@@ -51,8 +48,8 @@ zone "envs.sh" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; 167.114.154.31; 37.187.251.136; 37.187.168.234; 51.68.180.207; };
-	allow-transfer { 127.0.0.1; key tilde_msT; 167.114.154.31; 37.187.251.136; 37.187.168.234; 51.68.180.207; };
+	also-notify { 51.79.32.63; 78.31.64.115; };
+	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
 };
 
@@ -62,8 +59,8 @@ zone "envs.o" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 51.79.32.63; };
-	allow-transfer { 127.0.0.1; key tilde_msT; };
+	also-notify { 51.79.32.63; 78.31.64.115; };
+	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.o. txt; };
 };
 

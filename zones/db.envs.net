@@ -1,18 +1,17 @@
 $TTL 28800  ; 8 hours
-envs.net.       IN SOA  envs.net. root.envs.net. (
-                2019101001  ; serial
+envs.net.       IN SOA  ns1.envs.net. root.envs.net. (
+                2019111401  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
                 28800 )     ; minimum (8 hours)
-            NS  envs.net.
+            NS  ns1.envs.net.
+            NS  ns2.envs.net.
             NS  ns1.tildeverse.net.
-            NS  dns1.nsdns.info.
-            NS  dns2.nsdns.info.
             A   89.163.145.170
             MX  10 mail.envs.net.
             CAA 128 issue "letsencrypt.org"
-            TXT "v=spf1 a mx ip4:5.199.136.29 ip4:5.199.130.141 ~all"
+            TXT "v=spf1 a mx ~all"
             TXT "keybase-site-verification=-iwam5CwuryuM8r6wUwTbINViZL9CJoyfVbBmBy7_8k"
             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
             SSHFP 1 2 edd078ef499fce5ca186daa68e75dc888c69fa358b002898282dc413f6749458
@@ -21,8 +20,9 @@ envs.net.       IN SOA  envs.net. root.envs.net. (
             SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
 $ORIGIN envs.net.
+ns1             A       89.163.145.170
+ns2             A       78.31.64.115
 *               A       89.163.145.170
-ownercheck      TXT     "4b87cebc"
 _dmarc          TXT     "v=DMARC1; p=quarantine; pct=100"
 $TTL 120    ; 2 minutes
 _acme-challenge TXT     "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"

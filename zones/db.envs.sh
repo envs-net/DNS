@@ -1,14 +1,13 @@
 $TTL 28800  ; 8 hours
-envs.sh.        IN SOA  envs.net. root.envs.net. (
-                2019100101  ; Serial
+envs.sh.        IN SOA  ns1.envs.net. root.envs.net. (
+                2019111401  ; Serial
                 10800       ; Refresh
                 3600        ; Retry
                 604800      ; Expire
                 28800 )     ; Negative Cache TTL
-            NS  envs.net.
+            NS  ns1.envs.net.
+            NS  ns2.envs.net.
             NS  ns1.tildeverse.net.
-            NS  dns1.nsdns.info.
-            NS  dns2.nsdns.info.
             A   89.163.145.170
             CAA 128 issue "letsencrypt.org"
             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
@@ -19,6 +18,5 @@ envs.sh.        IN SOA  envs.net. root.envs.net. (
             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
 $ORIGIN envs.sh.
 *               A       89.163.145.170
-ownercheck      TXT     "4b87cebc"
 $TTL 120    ; 2 minutes
 _acme-challenge TXT "nagXuRRPXr5qap349w8KtFHbSDOuhseozptmI3_yMG8"

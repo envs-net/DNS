@@ -1,14 +1,13 @@
 $TTL 28800  ; 8 hours
-envs.tilde.     IN SOA  envs.net. root.envs.net. (
-                2019100101  ; Serial
+envs.tilde.     IN SOA  ns1.envs.net. root.envs.net. (
+                2019111401  ; Serial
                 10800       ; Refresh
                 3600        ; Retry
                 604800      ; Expire
                 28800 )     ; Negative Cache TTL
-            NS  envs.net.
+            NS  ns1.envs.net.
+            NS  ns2.envs.net.
             NS  ns1.tildeverse.net.
-            NS  ns1.tildenic.org.
-            NS  ns2.tildenic.org.
             A   89.163.145.170
             CAA 128 issue "letsencrypt.org"
             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
@@ -18,4 +17,4 @@ envs.tilde.     IN SOA  envs.net. root.envs.net. (
             SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
 $ORIGIN envs.tilde.
-*           A   89.163.145.170
+*               A       89.163.145.170
