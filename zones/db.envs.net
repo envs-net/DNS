@@ -1,6 +1,6 @@
 $TTL 28800  ; 8 hours
 envs.net.       IN SOA  ns1.envs.net. root.envs.net. (
-                2019111402  ; serial
+                2019112701  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -72,7 +72,6 @@ $ORIGIN _tcp.envs.net.
 _autodiscover   SRV 0 10 443 mail.envs.net.
 _imap           SRV 0 10 143 mail.envs.net.
 _imaps          SRV 0 10 993 mail.envs.net.
-_pop            SRV 0 10 110 mail.envs.net.
-_pops           SRV 0 10 995 mail.envs.net.
-_smtp           SRV 0 10 25 mail.envs.net.
-_smtps          SRV 0 10 587 mail.envs.net.
+_pop3           SRV 0 10 110 mail.envs.net.
+_pop3s          SRV 0 10 995 mail.envs.net.
+_submission     SRV 0 10 587 mail.envs.net.
