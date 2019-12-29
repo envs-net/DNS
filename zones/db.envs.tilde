@@ -1,6 +1,7 @@
+$ORIGIN .
 $TTL 28800  ; 8 hours
-envs.tilde.     IN SOA  ns1.envs.net. root.envs.net. (
-                2019111402  ; Serial
+envs.tilde      IN SOA  ns1.envs.net. root.envs.net. (
+                2019122901  ; Serial
                 10800       ; Refresh
                 3600        ; Retry
                 604800      ; Expire
