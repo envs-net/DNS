@@ -76,4 +76,5 @@ _imaps          SRV 10 0 993 mail.envs.net.
 _pop3           SRV 10 0 110 mail.envs.net.
 _pop3s          SRV 10 0 995 mail.envs.net.
 _submission     SRV 10 0 587 mail.envs.net.
+$ORIGIN _tcp.matrix.envs.net.
 _matrix         SRV 10 0 8448 matrix.envs.net.
