@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020010504  ; serial
+                2020010601  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -67,15 +67,15 @@ git             SSHFP 3 1 37b0ba28a88669fd9bbeabf26781045ac0ffa4c5
 git             SSHFP 3 2 1b8ba4b54d8f29591ac4f1b8dab64412fe153eb5fe9641b7b6f56b101fd5cbd1
 git             SSHFP 4 1 37f3b26188e406beefbdc70558545fb211326c2b
 git             SSHFP 4 2 974452767ec3332ab2431bae9569c64bede1d6c6af6c3eebb036ad2f9a2ba771
+_autodiscover._tcp SRV 10 0 443 mail.envs.net.
+_imap._tcp         SRV 10 0 143 mail.envs.net.
+_imaps._tcp        SRV 10 0 993 mail.envs.net.
+_pop3._tcp         SRV 10 0 110 mail.envs.net.
+_pop3s._tcp        SRV 10 0 995 mail.envs.net.
+_submission._tcp   SRV 10 0 587 mail.envs.net.
+_turn._udp         SRV 10 0 3478 turn.envs.net.
 _github-challenge-envs-net TXT  "099ae75811"
 $ORIGIN git.envs.net.
 _github-challenge-envs-net TXT  "a781f9d6d2"
-$ORIGIN _tcp.envs.net.
-_autodiscover   SRV 10 0 443 mail.envs.net.
-_imap           SRV 10 0 143 mail.envs.net.
-_imaps          SRV 10 0 993 mail.envs.net.
-_pop3           SRV 10 0 110 mail.envs.net.
-_pop3s          SRV 10 0 995 mail.envs.net.
-_submission     SRV 10 0 587 mail.envs.net.
 $ORIGIN _tcp.matrix.envs.net.
 _matrix         SRV 10 0 8448 matrix.envs.net.
