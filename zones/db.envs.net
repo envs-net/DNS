@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020010601  ; serial
+                2020010901  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -73,7 +73,7 @@ _imaps._tcp        SRV 10 0 993 mail.envs.net.
 _pop3._tcp         SRV 10 0 110 mail.envs.net.
 _pop3s._tcp        SRV 10 0 995 mail.envs.net.
 _submission._tcp   SRV 10 0 587 mail.envs.net.
-_turn._udp         SRV 10 0 3478 turn.envs.net.
+_turn._udp         SRV 10 0 5349 turn.envs.net.
 _github-challenge-envs-net TXT  "099ae75811"
 $ORIGIN git.envs.net.
 _github-challenge-envs-net TXT  "a781f9d6d2"
