@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020011102  ; serial
+                2020011308  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -24,7 +24,6 @@ $ORIGIN envs.net.
 ns1             A       89.163.145.170
 ns2             A       78.31.64.115
 *               A       89.163.145.170
-matrix          A       89.163.145.170
 _dmarc          TXT     "v=DMARC1; p=quarantine; pct=100"
 $TTL 120    ; 2 minutes
 _acme-challenge TXT     "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
