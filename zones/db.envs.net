@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020011308  ; serial
+                2020022701  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -44,13 +44,13 @@ autoconfig      CNAME   mail
 autodiscover    CNAME   mail
 imap            CNAME   mail
 imaps           CNAME   mail
-lists           A       5.199.136.29
 mail            A       5.199.136.28
 pop             CNAME   mail
 pops            CNAME   mail
 smtp            CNAME   mail
 smtps           CNAME   mail
 webmail         CNAME   mail
+pleroma         A       5.199.136.29
 sync            A       78.31.64.115
 ssh             A       5.199.139.30
 ssh             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
