@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020040501  ; serial
+                2020051901  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -66,6 +66,7 @@ git             SSHFP 3 1 37b0ba28a88669fd9bbeabf26781045ac0ffa4c5
 git             SSHFP 3 2 1b8ba4b54d8f29591ac4f1b8dab64412fe153eb5fe9641b7b6f56b101fd5cbd1
 git             SSHFP 4 1 37f3b26188e406beefbdc70558545fb211326c2b
 git             SSHFP 4 2 974452767ec3332ab2431bae9569c64bede1d6c6af6c3eebb036ad2f9a2ba771
+drone           A       5.199.130.141
 _autodiscover._tcp SRV 10 0 443 mail.envs.net.
 _imap._tcp         SRV 10 0 143 mail.envs.net.
 _imaps._tcp        SRV 10 0 993 mail.envs.net.
