@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020051901  ; serial
+                2020071501  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -49,6 +49,7 @@ pop             CNAME   mail
 pops            CNAME   mail
 smtp            CNAME   mail
 smtps           CNAME   mail
+status          CNAME   envs.netlify.app.
 webmail         CNAME   mail
 pleroma         A       5.199.136.29
 sync            A       78.31.64.115
