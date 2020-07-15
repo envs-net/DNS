@@ -13,7 +13,6 @@ envs.net        IN SOA  ns1.envs.net. root.envs.net. (
             MX  10 mail.envs.net.
             CAA 128 issue "letsencrypt.org"
             TXT "v=spf1 a mx -all"
-            TXT "keybase-site-verification=-iwam5CwuryuM8r6wUwTbINViZL9CJoyfVbBmBy7_8k"
             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
             SSHFP 1 2 edd078ef499fce5ca186daa68e75dc888c69fa358b002898282dc413f6749458
             SSHFP 3 1 a6af5e859aab4c5aefef799e0b5f4150bfca653a
