@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020071501  ; serial
+                2020081101  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -23,6 +23,10 @@ $ORIGIN envs.net.
 ns1             A       89.163.145.170
 ns2             A       78.31.64.115
 *               A       89.163.145.170
+dns             A       5.199.130.141
+pleroma         A       5.199.136.29
+status          CNAME   envs.netlify.app.
+sync            A       78.31.64.115
 _dmarc          TXT     "v=DMARC1; p=quarantine; pct=100"
 $TTL 120    ; 2 minutes
 _acme-challenge TXT     "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
@@ -39,19 +43,16 @@ modoboa._domainkey TXT (
   "vVH+I0OiX981QwDptkLcrhVqvmSdXxsjYJ2ApPEXs1D3hvCvhpiUKpLq9RMWTmvr2E7kmG5iJN"
   "pgd+vVKhRR386URwy6NRhs9W5AadYEUALasxr5rOPabHjhv0nBQlTiG+I8PQ5i9AMyyif2UXf+"
   "llsCAwEAAQ==")
+mail            A       5.199.136.28
 autoconfig      CNAME   mail
 autodiscover    CNAME   mail
 imap            CNAME   mail
 imaps           CNAME   mail
-mail            A       5.199.136.28
 pop             CNAME   mail
 pops            CNAME   mail
 smtp            CNAME   mail
 smtps           CNAME   mail
-status          CNAME   envs.netlify.app.
 webmail         CNAME   mail
-pleroma         A       5.199.136.29
-sync            A       78.31.64.115
 ssh             A       5.199.139.30
 ssh             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
 ssh             SSHFP 1 2 edd078ef499fce5ca186daa68e75dc888c69fa358b002898282dc413f6749458
@@ -59,6 +60,7 @@ ssh             SSHFP 3 1 a6af5e859aab4c5aefef799e0b5f4150bfca653a
 ssh             SSHFP 3 2 5340ba48a19751f96f7b5ea6da5e0a58174b2c0456e8ef13886599b17014da2e
 ssh             SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
 ssh             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
+drone           A       5.199.130.141
 git             A       5.199.130.141
 git             SSHFP 1 1 425f8b1f3d006890b4121b315c6d0a5643699097
 git             SSHFP 1 2 0436bd7ad8ddf3a928f95f5ed82ea83a60b1faf5a877d2ca186d34c4b5ea5dbc
@@ -66,7 +68,6 @@ git             SSHFP 3 1 37b0ba28a88669fd9bbeabf26781045ac0ffa4c5
 git             SSHFP 3 2 1b8ba4b54d8f29591ac4f1b8dab64412fe153eb5fe9641b7b6f56b101fd5cbd1
 git             SSHFP 4 1 37f3b26188e406beefbdc70558545fb211326c2b
 git             SSHFP 4 2 974452767ec3332ab2431bae9569c64bede1d6c6af6c3eebb036ad2f9a2ba771
-drone           A       5.199.130.141
 _autodiscover._tcp SRV 10 0 443 mail.envs.net.
 _imap._tcp         SRV 10 0 143 mail.envs.net.
 _imaps._tcp        SRV 10 0 993 mail.envs.net.
