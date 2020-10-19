@@ -65,18 +65,6 @@ zone "tilde.news" {
 	masters { 198.50.128.75; };
 };
 
-zone "tilde.ninja" {
-	type slave;
-	file "/etc/bind/slaves/db.tilde.ninja";
-	masters { 198.50.128.75; };
-};
-
-zone "tilde.pizza" {
-	type slave;
-	file "/etc/bind/slaves/db.tilde.pizza";
-	masters { 198.50.128.75; };
-};
-
 zone "tilderadio.org" {
 	type slave;
 	file "/etc/bind/slaves/db.tilderadio.org";
