@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020101901  ; serial
+                2020103102  ; serial
                 10800       ; refresh (3 hours)
                 3600        ; retry (1 hour)
                 604800      ; expire (1 week)
@@ -21,14 +21,25 @@ envs.net        IN SOA  ns1.envs.net. root.envs.net. (
             SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
 $ORIGIN envs.net.
+*               A       89.163.145.170
 ns1             A       89.163.145.170
 ns2             A       168.119.12.180
+dns             A       5.199.130.141
+status          CNAME   envs.netlify.app.
 core            A       89.163.145.170
 srv01           A       168.119.12.180
-dns             A       5.199.130.141
-*               A       89.163.145.170
-status          CNAME   envs.netlify.app.
-pleroma         A       5.199.136.29
+moni            A       144.76.146.17
+grafana         A       144.76.146.17
+prometheus      A       144.76.146.17
+pleroma         A       144.76.146.17
+social          A       144.76.146.17
+halcyon         A       144.76.146.17
+matrix          A       144.76.146.18
+turn            A       144.76.146.18
+element         A       144.76.146.18
+riot            A       144.76.146.18
+dimension       A       144.76.146.18
+lag             A       144.76.146.18
 sync            A       78.31.64.115
 _dmarc          TXT     "v=DMARC1; p=quarantine; pct=100"
 $TTL 120    ; 2 minutes
