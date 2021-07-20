@@ -1,95 +1,116 @@
 $ORIGIN .
-$TTL 28800  ; 8 hours
-envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2020103102  ; serial
-                10800       ; refresh (3 hours)
-                3600        ; retry (1 hour)
-                604800      ; expire (1 week)
-                28800 )     ; minimum (8 hours)
-            NS  ns1.envs.net.
-            NS  ns2.envs.net.
-            NS  ns1.tildeverse.net.
-            A   89.163.145.170
-            MX  10 mail.envs.net.
-            CAA 128 issue "letsencrypt.org"
-            TXT "v=spf1 a mx -all"
-            TXT "google-site-verification=Hl1fTpbuz7fs8xPz0NTwugOv5UYUxKHgLnl_hPMdn_Q"
-            SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
-            SSHFP 1 2 edd078ef499fce5ca186daa68e75dc888c69fa358b002898282dc413f6749458
-            SSHFP 3 1 a6af5e859aab4c5aefef799e0b5f4150bfca653a
-            SSHFP 3 2 5340ba48a19751f96f7b5ea6da5e0a58174b2c0456e8ef13886599b17014da2e
-            SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
-            SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
+$TTL 28800	; 8 hours
+envs.net		IN SOA	ns1.envs.net. root.envs.net. (
+				2021072012 ; serial
+				10800      ; refresh (3 hours)
+				3600       ; retry (1 hour)
+				604800     ; expire (1 week)
+				28800      ; minimum (8 hours)
+				)
+			NS	ns1.envs.net.
+			NS	ns2.envs.net.
+			NS	ns1.tildeverse.net.
+			A	89.163.145.170
+			MX	10 mail.envs.net.
+			TXT	"v=spf1 a mx -all"
+			TXT	"google-site-verification=Hl1fTpbuz7fs8xPz0NTwugOv5UYUxKHgLnl_hPMdn_Q"
+			SSHFP	1 1 (
+				2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
+			SSHFP	1 2 (
+				EDD078EF499FCE5CA186DAA68E75DC888C69FA358B00
+				2898282DC413F6749458 )
+			SSHFP	3 1 (
+				A6AF5E859AAB4C5AEFEF799E0B5F4150BFCA653A )
+			SSHFP	3 2 (
+				5340BA48A19751F96F7B5EA6DA5E0A58174B2C0456E8
+				EF13886599B17014DA2E )
+			SSHFP	4 1 (
+				26C107E80A42C37290CF17E56571C5D0714DA4BA )
+			SSHFP	4 2 (
+				57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
+				75AEAB0A69BFACA4542F )
+			CAA	128 issue "letsencrypt.org"
 $ORIGIN envs.net.
-*               A       89.163.145.170
-ns1             A       89.163.145.170
-ns2             A       168.119.12.180
-dns             A       5.199.130.141
-status          CNAME   envs.netlify.app.
-core            A       89.163.145.170
-srv01           A       168.119.12.180
-moni            A       144.76.146.17
-grafana         A       144.76.146.17
-prometheus      A       144.76.146.17
-pleroma         A       144.76.146.17
-social          A       144.76.146.17
-halcyon         A       144.76.146.17
-matrix          A       144.76.146.18
-turn            A       144.76.146.18
-element         A       144.76.146.18
-riot            A       144.76.146.18
-dimension       A       144.76.146.18
-lag             A       144.76.146.18
-sync            A       78.31.64.115
-_dmarc          TXT     "v=DMARC1; p=quarantine; pct=100"
-$TTL 120    ; 2 minutes
-_acme-challenge TXT     "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
-$TTL 28800  ; 8 hours
-modoboa._domainkey TXT (
-  "v=DKIM1;k=rsa;p=MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArRQ52xvv9yjsC9"
-  "+Aj0PYGM30gZLemLl0AiFYRximpnjIJvQthtz3fb4V8chrKNMPQrgz30Bi0OMpoRu3YB57BhVk"
-  "pLDTHkVzyXD5EXuA9BbutjEvAiD3vvAi19RIL+NAc3sDYn+c2pHP648lnN2XLvhwKOAch8lYjC"
-  "4t+olYWv4mqm39rEWXLq5KxDHC3NaleKB3PLxe8GbX0QK5Ma/ZIsAT5vhxQwXcq4p7HgHC3CIB"
-  "+EToNYqAWjQ2OiRHKD91PyBTgpA89QQTAj8xJpGVpYxafv0haTfqXiBUubSXjDOSrQvz/vsm29"
-  "HLf+6abE28CmcKPXw79180zrVkeC/w5kiIgd/SCdMmVoDvtnmU0TrFHD9+kwNzCYT34p9Y35Sb"
-  "l/FwS96d96N3rqEY/lSZONR0+fFsVqwMzdcVxm+Kfkju7rLwPY/HlT50Oj9LV8eol0ZcIDLj0R"
-  "uTPpgW3DagoS20KN5xUkv+nF/KdASWsUhAIBBFWUk/YL737Cl8vi6CiMvCFfeuh9npnFyziKAr"
-  "vVH+I0OiX981QwDptkLcrhVqvmSdXxsjYJ2ApPEXs1D3hvCvhpiUKpLq9RMWTmvr2E7kmG5iJN"
-  "pgd+vVKhRR386URwy6NRhs9W5AadYEUALasxr5rOPabHjhv0nBQlTiG+I8PQ5i9AMyyif2UXf+"
-  "llsCAwEAAQ==")
-mail            A       5.199.136.28
-autoconfig      CNAME   mail
-autodiscover    CNAME   mail
-imap            CNAME   mail
-imaps           CNAME   mail
-pop             CNAME   mail
-pops            CNAME   mail
-smtp            CNAME   mail
-smtps           CNAME   mail
-webmail         CNAME   mail
-ssh             A       5.199.139.30
-ssh             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
-ssh             SSHFP 1 2 edd078ef499fce5ca186daa68e75dc888c69fa358b002898282dc413f6749458
-ssh             SSHFP 3 1 a6af5e859aab4c5aefef799e0b5f4150bfca653a
-ssh             SSHFP 3 2 5340ba48a19751f96f7b5ea6da5e0a58174b2c0456e8ef13886599b17014da2e
-ssh             SSHFP 4 1 26c107e80a42c37290cf17e56571c5d0714da4ba
-ssh             SSHFP 4 2 57e9974ec449fa37c9331c4f943ff6f1da56a2eba7b375aeab0a69bfaca4542f
-drone           A       5.199.130.141
-git             A       5.199.130.141
-git             SSHFP 1 1 425f8b1f3d006890b4121b315c6d0a5643699097
-git             SSHFP 1 2 0436bd7ad8ddf3a928f95f5ed82ea83a60b1faf5a877d2ca186d34c4b5ea5dbc
-git             SSHFP 3 1 37b0ba28a88669fd9bbeabf26781045ac0ffa4c5
-git             SSHFP 3 2 1b8ba4b54d8f29591ac4f1b8dab64412fe153eb5fe9641b7b6f56b101fd5cbd1
-git             SSHFP 4 1 37f3b26188e406beefbdc70558545fb211326c2b
-git             SSHFP 4 2 974452767ec3332ab2431bae9569c64bede1d6c6af6c3eebb036ad2f9a2ba771
-_autodiscover._tcp SRV 10 0 443 mail.envs.net.
-_imap._tcp         SRV 10 0 143 mail.envs.net.
-_imaps._tcp        SRV 10 0 993 mail.envs.net.
-_pop3._tcp         SRV 10 0 110 mail.envs.net.
-_pop3s._tcp        SRV 10 0 995 mail.envs.net.
-_submission._tcp   SRV 10 0 587 mail.envs.net.
-_matrix._tcp       SRV 10 0 443 matrix.envs.net.
-_turn._udp         SRV 10 0 5349 turn.envs.net.
-_github-challenge-envs-net TXT  "099ae75811"
+*			A	89.163.145.170
+$TTL 120	; 2 minutes
+_acme-challenge		TXT	"rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
+$TTL 28800	; 8 hours
+_dmarc			TXT	"v=DMARC1; p=quarantine; pct=100"
+modoboa._domainkey	TXT	"v=DKIM1;k=rsa;p=MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArRQ52xvv9yjsC9" "+Aj0PYGM30gZLemLl0AiFYRximpnjIJvQthtz3fb4V8chrKNMPQrgz30Bi0OMpoRu3YB57BhVk" "pLDTHkVzyXD5EXuA9BbutjEvAiD3vvAi19RIL+NAc3sDYn+c2pHP648lnN2XLvhwKOAch8lYjC" "4t+olYWv4mqm39rEWXLq5KxDHC3NaleKB3PLxe8GbX0QK5Ma/ZIsAT5vhxQwXcq4p7HgHC3CIB" "+EToNYqAWjQ2OiRHKD91PyBTgpA89QQTAj8xJpGVpYxafv0haTfqXiBUubSXjDOSrQvz/vsm29" "HLf+6abE28CmcKPXw79180zrVkeC/w5kiIgd/SCdMmVoDvtnmU0TrFHD9+kwNzCYT34p9Y35Sb" "l/FwS96d96N3rqEY/lSZONR0+fFsVqwMzdcVxm+Kfkju7rLwPY/HlT50Oj9LV8eol0ZcIDLj0R" "uTPpgW3DagoS20KN5xUkv+nF/KdASWsUhAIBBFWUk/YL737Cl8vi6CiMvCFfeuh9npnFyziKAr" "vVH+I0OiX981QwDptkLcrhVqvmSdXxsjYJ2ApPEXs1D3hvCvhpiUKpLq9RMWTmvr2E7kmG5iJN" "pgd+vVKhRR386URwy6NRhs9W5AadYEUALasxr5rOPabHjhv0nBQlTiG+I8PQ5i9AMyyif2UXf+" "llsCAwEAAQ=="
+_github-challenge-envs-net TXT	"099ae75811"
+$ORIGIN _tcp.envs.net.
+_autodiscover		SRV	10 0 443 mail.envs.net.
+_imap			SRV	10 0 143 mail.envs.net.
+_imaps			SRV	10 0 993 mail.envs.net.
+_matrix			SRV	10 0 443 matrix.envs.net.
+_pop3			SRV	10 0 110 mail.envs.net.
+_pop3s			SRV	10 0 995 mail.envs.net.
+_submission		SRV	10 0 587 mail.envs.net.
+$ORIGIN envs.net.
+_turn._udp		SRV	10 0 5349 turn
+autoconfig		CNAME	mail
+autodiscover		CNAME	mail
+core			A	89.163.145.170
+dimension		A	144.76.146.18
+dns			A	5.199.130.141
+drone			A	5.199.130.141
+element			A	144.76.146.18
+git			A	5.199.130.141
+			SSHFP	1 1 (
+				425F8B1F3D006890B4121B315C6D0A5643699097 )
+			SSHFP	1 2 (
+				0436BD7AD8DDF3A928F95F5ED82EA83A60B1FAF5A877
+				D2CA186D34C4B5EA5DBC )
+			SSHFP	3 1 (
+				37B0BA28A88669FD9BBEABF26781045AC0FFA4C5 )
+			SSHFP	3 2 (
+				1B8BA4B54D8F29591AC4F1B8DAB64412FE153EB5FE96
+				41B7B6F56B101FD5CBD1 )
+			SSHFP	4 1 (
+				37F3B26188E406BEEFBDC70558545FB211326C2B )
+			SSHFP	4 2 (
+				974452767EC3332AB2431BAE9569C64BEDE1D6C6AF6C
+				3EEBB036AD2F9A2BA771 )
 $ORIGIN git.envs.net.
-_github-challenge-envs-net TXT  "a781f9d6d2"
+_github-challenge-envs-net TXT	"a781f9d6d2"
+$ORIGIN envs.net.
+grafana			A	144.76.146.17
+imap			CNAME	mail
+imaps			CNAME	mail
+jitsi			A	144.76.146.17
+lag			A	144.76.146.18
+mail			A	5.199.136.28
+matrix			A	144.76.146.18
+meet			A	144.76.146.17
+moni			A	144.76.146.17
+ns1			A	89.163.145.170
+ns2			A	168.119.12.180
+pleroma			A	144.76.146.17
+pop			CNAME	mail
+pops			CNAME	mail
+prometheus		A	144.76.146.17
+riot			A	144.76.146.18
+smtp			CNAME	mail
+smtps			CNAME	mail
+social			A	144.76.146.17
+srv01			A	168.119.12.180
+ssh			A	5.199.139.30
+			SSHFP	1 1 (
+				2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
+			SSHFP	1 2 (
+				EDD078EF499FCE5CA186DAA68E75DC888C69FA358B00
+				2898282DC413F6749458 )
+			SSHFP	3 1 (
+				A6AF5E859AAB4C5AEFEF799E0B5F4150BFCA653A )
+			SSHFP	3 2 (
+				5340BA48A19751F96F7B5EA6DA5E0A58174B2C0456E8
+				EF13886599B17014DA2E )
+			SSHFP	4 1 (
+				26C107E80A42C37290CF17E56571C5D0714DA4BA )
+			SSHFP	4 2 (
+				57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
+				75AEAB0A69BFACA4542F )
+status			CNAME	envs.netlify.app.
+sync			A	78.31.64.115
+turn			A	144.76.146.18
+webmail			CNAME	mail
