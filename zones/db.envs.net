@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800	; 8 hours
 envs.net		IN SOA	ns1.envs.net. root.envs.net. (
-				2021072012 ; serial
+				2021072501 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
 				604800     ; expire (1 week)
@@ -75,6 +75,7 @@ $ORIGIN git.envs.net.
 _github-challenge-envs-net TXT	"a781f9d6d2"
 $ORIGIN envs.net.
 grafana			A	144.76.146.17
+hydrogen		A	144.76.146.18
 imap			CNAME	mail
 imaps			CNAME	mail
 jitsi			A	144.76.146.17
