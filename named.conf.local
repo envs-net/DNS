@@ -71,7 +71,7 @@ zone "envs.tilde" {
 	//auto-dnssec maintain;
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 168.119.12.180; 192.99.181.240; 149.56.184.112; 213.239.234.117; };
-	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; 149.56.184.112; 213.239.234.117; };
+	also-notify { 168.119.12.180; 192.99.181.240; 188.40.73.235; };
+	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; 188.40.73.235; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.tilde. txt; };
 };

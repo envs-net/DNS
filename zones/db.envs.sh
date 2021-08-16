@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800	; 8 hours
 envs.sh			IN SOA	ns1.envs.net. root.envs.net. (
-				2021072012 ; serial
+				2021081601 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
 				604800     ; expire (1 week)
