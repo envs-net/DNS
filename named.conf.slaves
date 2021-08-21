@@ -5,4 +5,4 @@
 include "/etc/bind/slave_envs";
 
 // Tilde Zones - ( ben@tilde.team )
-include "/etc/bind/slave_tilde";
+//include "/etc/bind/slave_tilde";

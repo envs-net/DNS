@@ -1,8 +1,8 @@
 //
 // Forward Zones
 
-zone "tilde." IN {
+zone "tilde" IN {
 	type forward;
 	forward only;
-	forwarders { 149.56.184.112; 213.239.234.117; };
+	forwarders { 188.40.73.235; };
 };
