@@ -22,7 +22,7 @@ include "/etc/bind/letsencrypt_U.key";
 // SERVER
 //server 89.163.145.170 { keys { envs_msT; }; }; // ns1.envs.net
 server 168.119.12.180 { keys { envs_msT; }; };   // ns2.envs.net
-server 157.90.196.48 { keys { tilde_msT; }; };   // ns1.bhh.sh
+server 157.90.196.48 { keys { tilde_msT; }; };   // ns1.tildeverse.net
 
 // TILDE INTRA-NET
 //server 149.56.184.112  // ns1.tildenic.org

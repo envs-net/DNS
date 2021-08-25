@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800	; 8 hours
 envs.sh			IN SOA	ns1.envs.net. root.envs.net. (
-				2021082501 ; serial
+				2021082502 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
 				604800     ; expire (1 week)
@@ -9,7 +9,7 @@ envs.sh			IN SOA	ns1.envs.net. root.envs.net. (
 				)
 			NS	ns1.envs.net.
 			NS	ns2.envs.net.
-			NS	ns1.bhh.sh.
+			NS	ns1.tildeverse.net.
 			A	89.163.145.170
 			SSHFP	1 1 (
 				2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
