@@ -1,14 +1,14 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.tilde      IN SOA  ns1.envs.net. root.envs.net. (
-                2021081601  ; Serial
+                2021082501  ; Serial
                 10800       ; Refresh
                 3600        ; Retry
                 604800      ; Expire
                 28800 )     ; Negative Cache TTL
             NS  ns1.envs.net.
             NS  ns2.envs.net.
-            NS  ns1.tildeverse.net.
+            NS  ns1.bhh.sh.
             A   89.163.145.170
             CAA 128 issue "letsencrypt.org"
             SSHFP 1 1 2a3dbba3587d58c0e5ca18538fb740d4d46a147f
