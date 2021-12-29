@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800	; 8 hours
 envs.net		IN SOA	ns1.envs.net. root.envs.net. (
-				2021122905 ; serial
+				2021122906 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
 				604800     ; expire (1 week)
@@ -55,6 +55,7 @@ autoconfig		CNAME	mail
 autodiscover		CNAME	mail
 core			A	89.163.145.170
 cinny			A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 dimension		A	144.76.146.18
 				AAAA	2a01:4f8:242:430b:0:a:0:14
 dns				A	5.199.130.141
@@ -82,9 +83,9 @@ _github-challenge-envs-net TXT	"a781f9d6d2"
 $ORIGIN envs.net.
 grafana			A	144.76.146.17
 hydrogen		A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 imap			CNAME	mail
 imaps			CNAME	mail
-jitsi			A	144.76.146.17
 lag				A	144.76.146.18
 				AAAA	2a01:4f8:242:430b:0:a:0:14
 mail			A	5.199.136.28
