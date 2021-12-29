@@ -36,7 +36,7 @@ options {
 	recursive-clients 4096;
 
 	listen-on { any; };
-	listen-on-v6 { none; };
+	listen-on-v6 { any; };
 
 	allow-update { none; };
 	allow-transfer { none; };

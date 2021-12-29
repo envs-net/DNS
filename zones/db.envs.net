@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800	; 8 hours
 envs.net		IN SOA	ns1.envs.net. root.envs.net. (
-				2021122906 ; serial
+				2021122907 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
 				604800     ; expire (1 week)
@@ -93,11 +93,15 @@ matrix			A	144.76.146.18
 				AAAA	2a01:4f8:242:430b:0:a:0:14
 meet			A	144.76.146.17
 mobilizon		A	144.76.146.17
+				AAAA	2a01:4f8:242:430b:0:a::22
 events			A	144.76.146.17
+				AAAA	2a01:4f8:242:430b:0:a::22
 moni			A	144.76.146.17
 ns1				A	89.163.145.170
 ns2				A	168.119.12.180
+				AAAA	2a01:4f8:242:430b:0:a::3
 pleroma			A	144.76.146.17
+				AAAA	2a01:4f8:242:430b:0:a:0:18
 pop				CNAME	mail
 pops			CNAME	mail
 prometheus		A	144.76.146.17
