@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800	; 8 hours
 envs.net		IN SOA	ns1.envs.net. root.envs.net. (
-				2021082502 ; serial
+				2021122905 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
 				604800     ; expire (1 week)
@@ -56,9 +56,11 @@ autodiscover		CNAME	mail
 core			A	89.163.145.170
 cinny			A	144.76.146.18
 dimension		A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 dns				A	5.199.130.141
 drone			A	5.199.130.141
 element			A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 git				A	5.199.130.141
 			SSHFP	1 1 (
 				425F8B1F3D006890B4121B315C6D0A5643699097 )
@@ -84,8 +86,10 @@ imap			CNAME	mail
 imaps			CNAME	mail
 jitsi			A	144.76.146.17
 lag				A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 mail			A	5.199.136.28
 matrix			A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 meet			A	144.76.146.17
 mobilizon		A	144.76.146.17
 events			A	144.76.146.17
@@ -97,6 +101,7 @@ pop				CNAME	mail
 pops			CNAME	mail
 prometheus		A	144.76.146.17
 riot			A	144.76.146.18
+				AAAA	2a01:4f8:242:430b:0:a:0:14
 smtp			CNAME	mail
 smtps			CNAME	mail
 social			A	144.76.146.17
@@ -120,4 +125,5 @@ ssh				A	5.199.139.30
 status			CNAME	envs.netlify.app.
 sync			A	78.31.64.115
 turn			A	144.76.146.18
+				AAAA    2a01:4f8:242:430b::2
 webmail			CNAME	mail
