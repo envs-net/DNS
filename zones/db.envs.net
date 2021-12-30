@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2021123001 ; serial
+                2021123002 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -11,6 +11,7 @@ envs.net        IN SOA  ns1.envs.net. root.envs.net. (
             NS      ns2.envs.net.
             NS      ns1.tildeverse.net.
             A       89.163.145.170
+            AAAA    2001:4ba0:ffa4:180::2
             MX      10 mail.envs.net.
             TXT "v=spf1 a mx -all"
             TXT "google-site-verification=Hl1fTpbuz7fs8xPz0NTwugOv5UYUxKHgLnl_hPMdn_Q"
@@ -32,6 +33,7 @@ envs.net        IN SOA  ns1.envs.net. root.envs.net. (
             CAA 128 issue "letsencrypt.org"
 $ORIGIN envs.net.
 *               A       89.163.145.170
+                AAAA    2001:4ba0:ffa4:180::2
 $TTL 120    ; 2 minutes
 _acme-challenge     TXT "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
 $TTL 28800  ; 8 hours
@@ -54,6 +56,7 @@ _turns._udp     SRV 10 0 5349 turn.envs.net.
 autoconfig      CNAME   mail
 autodiscover    CNAME   mail
 core            A       89.163.145.170
+                AAAA    2001:4ba0:ffa4:180::2
 cinny           A       144.76.146.18
                 AAAA    2a01:4f8:242:430b:0:a:0:14
 dimension       A       144.76.146.18
@@ -111,6 +114,7 @@ smtp            CNAME   mail
 smtps           CNAME   mail
 social          A       144.76.146.17
 srv01           A       168.119.12.180
+                AAAA    2a01:4f8:242:430b::2
 ssh             A       5.199.139.30
             SSHFP   1 1 (
                 2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
