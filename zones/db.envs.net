@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2021123002 ; serial
+                2022010501 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -57,14 +57,11 @@ autoconfig      CNAME   mail
 autodiscover    CNAME   mail
 core            A       89.163.145.170
                 AAAA    2001:4ba0:ffa4:180::2
-cinny           A       144.76.146.18
-                AAAA    2a01:4f8:242:430b:0:a:0:14
-dimension       A       144.76.146.18
-                AAAA    2a01:4f8:242:430b:0:a:0:14
+cinny           CNAME   matrix
+dimension       CNAME   matrix
 dns             A       5.199.130.141
 drone           A       5.199.130.141
-element         A       144.76.146.18
-                AAAA    2a01:4f8:242:430b:0:a:0:14
+element         CNAME   matrix
 git             A   5.199.130.141
             SSHFP   1 1 (
                 425F8B1F3D006890B4121B315C6D0A5643699097 )
@@ -84,21 +81,17 @@ git             A   5.199.130.141
 $ORIGIN git.envs.net.
 _github-challenge-envs-net TXT  "a781f9d6d2"
 $ORIGIN envs.net.
-grafana         A       144.76.146.17
-hydrogen        A       144.76.146.18
-                AAAA    2a01:4f8:242:430b:0:a:0:14
+grafana         CNAME   moni
+hydrogen        CNAME   matrix
 imap            CNAME   mail
 imaps           CNAME   mail
-lag             A       144.76.146.18
-                AAAA    2a01:4f8:242:430b:0:a:0:14
+lag             CNAME   matrix
 mail            A       5.199.136.28
 matrix          A       144.76.146.18
                 AAAA    2a01:4f8:242:430b:0:a:0:14
-meet            A       144.76.146.17
 mobilizon       A       144.76.146.17
                 AAAA    2a01:4f8:242:430b:0:a:0:22
-events          A       144.76.146.17
-                AAAA    2a01:4f8:242:430b:0:a:0:22
+events          CNAME   mobilizon
 moni            A       144.76.146.17
 ns1             A       89.163.145.170
 ns2             A       168.119.12.180
@@ -107,12 +100,11 @@ pleroma         A       144.76.146.17
                 AAAA    2a01:4f8:242:430b:0:a:0:18
 pop             CNAME   mail
 pops            CNAME   mail
-prometheus      A       144.76.146.17
-riot            A       144.76.146.18
-                AAAA    2a01:4f8:242:430b:0:a:0:14
+prometheus      CNAME   moni
+riot            CNAME   matrix
 smtp            CNAME   mail
 smtps           CNAME   mail
-social          A       144.76.146.17
+social          CNAME   pleroma
 srv01           A       168.119.12.180
                 AAAA    2a01:4f8:242:430b::2
 ssh             A       5.199.139.30
