@@ -45,8 +45,9 @@ zone "envs.net" {
 zone "envs.sh" {
 	type master;
 	file "/etc/bind/zones/db.envs.sh";
-	//auto-dnssec maintain;
-	//inline-signing yes;
+	auto-dnssec maintain;
+	inline-signing yes;
+	serial-update-method increment;
 	notify explicit;
 	also-notify { 168.119.12.180; 157.90.196.48; };
 	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
