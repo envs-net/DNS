@@ -53,17 +53,6 @@ zone "envs.sh" {
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
 };
 
-zone "envs.o" {
-	type master;
-	file "/etc/bind/zones/db.envs.o";
-	//auto-dnssec maintain;
-	//inline-signing yes;
-	notify explicit;
-	also-notify { 168.119.12.180; 157.90.196.48; };
-	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
-	update-policy { grant letsencrypt_U name _acme-challenge.envs.o. txt; };
-};
-
 // TILDE INTRA-NET
 zone "envs.tilde" {
 	type master;

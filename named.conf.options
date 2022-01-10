@@ -23,12 +23,9 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys. See https://www.isc.org/bind-keys
 	//========================================================================
-	dnssec-enable yes;
-	dnssec-validation auto;
 
 	key-directory "/etc/bind/keys/";
 
-	// Do not make public version of BIND
 	version none;
 
 	auth-nxdomain no; // conform to RFC1035
