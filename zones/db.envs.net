@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2022011001 ; serial
+                2022091902 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -13,6 +13,7 @@ envs.net        IN SOA  ns1.envs.net. root.envs.net. (
             A       89.163.145.170
             AAAA    2001:4ba0:ffa4:180::2
             MX      10 mail.envs.net.
+            MX      20 mx2.envs.net.
             TXT "v=spf1 a mx -all"
             TXT "google-site-verification=Hl1fTpbuz7fs8xPz0NTwugOv5UYUxKHgLnl_hPMdn_Q"
             SSHFP   1 1 (
@@ -87,6 +88,7 @@ imap            CNAME   mail
 imaps           CNAME   mail
 lag             CNAME   matrix
 mail            A       5.199.136.28
+mx2             A       144.76.146.19
 matrix          A       144.76.146.18
                 AAAA    2a01:4f8:242:430b:0:a:0:14
 mobilizon       A       144.76.146.17
