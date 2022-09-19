@@ -3,3 +3,7 @@ slaves
 *.key
 *.keys
 *.private
+zones/*.jbk
+zones/*.jnl
+zones/*.signed
+zones/*.jnl
