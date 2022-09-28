@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2022092701 ; serial
+                2022092801 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -63,7 +63,6 @@ dimension       CNAME   matrix
 dns             A       5.199.130.141
 drone           A       5.199.130.141
 element         CNAME   matrix
-fed             CNAME   matrix
 git             A   5.199.130.141
             SSHFP   1 1 (
                 425F8B1F3D006890B4121B315C6D0A5643699097 )
