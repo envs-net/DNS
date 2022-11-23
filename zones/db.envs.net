@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2022101301 ; serial
+                2022112301 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -54,6 +54,7 @@ _matrix         SRV 10 0 443 matrix.envs.net.
 $ORIGIN envs.net.
 _turn._udp      SRV 10 0 3478 turn.envs.net.
 _turns._udp     SRV 10 0 5349 turn.envs.net.
+akkoma          CNAME   pleroma
 autoconfig      CNAME   mail
 autodiscover    CNAME   mail
 core            A       89.163.145.170
