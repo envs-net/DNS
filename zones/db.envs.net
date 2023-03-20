@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2023032002 ; serial
+                2023032003 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -93,10 +93,10 @@ mail            A       5.199.136.28
 mx2             A       188.40.204.227
 matrix          A       144.76.146.18
                 AAAA    2a01:4f8:242:430b:0:a:0:14
-mobilizon       A       144.76.146.17
-                AAAA    2a01:4f8:242:430b:0:a:0:22
+mobilizon       A       188.40.204.225
+                AAAA    2a01:4f8:141:220b:0:a:0:22
 events          CNAME   mobilizon
-moni            A       144.76.146.17
+moni            A       188.40.204.225
 ns1             A       89.163.145.170
 ns2             A       46.4.121.41
                 AAAA    2a01:4f8:141:220b:0:a:0:3
@@ -128,7 +128,6 @@ ssh             A       5.199.139.30
                 57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
                 75AEAB0A69BFACA4542F )
 status          CNAME   envs.netlify.app.
-sync            A       78.31.64.115
 turn            A       144.76.146.18
                 AAAA    2a01:4f8:141:220b::2
 webmail         CNAME   mail
