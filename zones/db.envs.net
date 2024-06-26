@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2023032101 ; serial
+                2024062601 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -60,7 +60,6 @@ autodiscover    CNAME   mail
 core            A       89.163.145.170
                 AAAA    2001:4ba0:ffa4:180::2
 cinny           CNAME   matrix
-dimension       CNAME   matrix
 dns             A       5.199.130.141
 drone           A       5.199.130.141
 element         CNAME   matrix
@@ -128,6 +127,6 @@ ssh             A       5.199.139.30
                 57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
                 75AEAB0A69BFACA4542F )
 status          CNAME   envs.netlify.app.
-turn            A       144.76.146.18
+turn            A       188.40.204.226
                 AAAA    2a01:4f8:141:220b::2
 webmail         CNAME   mail
