@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2024062601 ; serial
+                2024062801 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -92,9 +92,6 @@ mail            A       5.199.136.28
 mx2             A       188.40.204.227
 matrix          A       188.40.204.226
                 AAAA    2a01:4f8:141:220b:0:a:0:14
-mobilizon       A       188.40.204.225
-                AAAA    2a01:4f8:141:220b:0:a:0:22
-events          CNAME   mobilizon
 moni            A       188.40.204.225
 ns1             A       89.163.145.170
 ns2             A       46.4.121.41
