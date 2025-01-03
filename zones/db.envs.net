@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2024062801 ; serial
+                2025010301 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -51,6 +51,7 @@ _pop3s          SRV 10 0 995 mail.envs.net.
 _submission     SRV 10 0 587 mail.envs.net.
 $ORIGIN _tcp.matrix.envs.net.
 _matrix         SRV 10 0 443 matrix.envs.net.
+_matrix-fed     SRV 10 0 443 matrix.envs.net.
 $ORIGIN envs.net.
 _turn._udp      SRV 10 0 3478 turn.envs.net.
 _turns._udp     SRV 10 0 5349 turn.envs.net.
