@@ -7,7 +7,6 @@
 //include "/etc/bind/zones.rfc1918";
 
 // ACL
-
 acl internals {
 	127.0.0.1; 192.168.1.0/24;
 };
@@ -20,13 +19,23 @@ include "/etc/bind/letsencrypt_U.key";
 
 
 // SERVER
-//server 89.163.145.170 { keys { envs_msT; }; }; // ns1.envs.net
-server 46.4.121.41 { keys { envs_msT; }; };   // ns2.envs.net
-server 157.90.196.48 { keys { tilde_msT; }; };   // ns1.tildeverse.net
+//server 89.163.145.170 { keys { envs_msT; }; };    // ns1.envs.net
+server 46.4.121.41 { keys { envs_msT; }; };         // ns2.envs.net
+server 157.90.196.48 { keys { tilde_msT; }; };      // ns1.tildeverse.net
 
 // TILDE INTRA-NET
 //server 149.56.184.112  // ns1.tildenic.org
 //server 213.239.234.117 // ns2.tildenic.org
+
+
+// DNSSEC-POLICY
+dnssec-policy "envs-policy" {
+    keys {
+        ksk key-directory lifetime unlimited algorithm 13;
+        zsk key-directory lifetime unlimited algorithm 13;
+    };
+    nsec3param;
+};
 
 
 // ZONES
@@ -34,7 +43,7 @@ server 157.90.196.48 { keys { tilde_msT; }; };   // ns1.tildeverse.net
 zone "envs.net" {
 	type master;
 	file "/etc/bind/zones/db.envs.net";
-	auto-dnssec maintain;
+	dnssec-policy "envs-policy";
 	inline-signing yes;
 	serial-update-method increment;
 	notify explicit;
@@ -46,7 +55,7 @@ zone "envs.net" {
 zone "envs.sh" {
 	type master;
 	file "/etc/bind/zones/db.envs.sh";
-	auto-dnssec maintain;
+	dnssec-policy "envs-policy";
 	inline-signing yes;
 	serial-update-method increment;
 	notify explicit;
@@ -59,7 +68,7 @@ zone "envs.sh" {
 zone "envs.tilde" {
 	type master;
 	file "/etc/bind/zones/db.envs.tilde";
-	//auto-dnssec maintain;
+	//dnssec-policy "envs-policy";
 	//inline-signing yes;
 	notify explicit;
 	also-notify { 46.4.121.41; 157.90.196.48; 188.40.73.235; };
