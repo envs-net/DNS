@@ -1,19 +1,19 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2025010401 ; serial
+                2026011201 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
                 28800      ; minimum (8 hours)
                 )
             NS      ns1.envs.net.
-            NS      ns2.envs.net.
+            NS      ext.envs.net.
             NS      ns1.tildeverse.net.
             A       89.163.145.170
             AAAA    2001:4ba0:ffa4:180::2
             MX      10 mail.envs.net.
-            MX      20 mx2.envs.net.
+            MX      20 ext.envs.net.
             TXT "v=spf1 a mx -all"
             TXT "google-site-verification=Hl1fTpbuz7fs8xPz0NTwugOv5UYUxKHgLnl_hPMdn_Q"
             SSHFP   1 1 (
@@ -65,6 +65,8 @@ dns             A       5.199.130.141
 drone           A       5.199.130.141
 element         CNAME   matrix
 element-call    CNAME   matrix
+ext             A       46.224.100.71
+                AAAA    2a01:4f8:c17:7692::1
 git             A   5.199.130.141
             SSHFP   1 1 (
                 425F8B1F3D006890B4121B315C6D0A5643699097 )
@@ -90,13 +92,10 @@ imap            CNAME   mail
 imaps           CNAME   mail
 lag             CNAME   matrix
 mail            A       5.199.136.28
-mx2             A       188.40.204.227
 matrix          A       188.40.204.226
                 AAAA    2a01:4f8:141:220b:0:a:0:14
 moni            A       188.40.204.225
 ns1             A       89.163.145.170
-ns2             A       46.4.121.41
-                AAAA    2a01:4f8:141:220b:0:a:0:3
 pleroma         A       188.40.204.225
                 AAAA    2a01:4f8:141:220b:0:a:0:18
 pop             CNAME   mail

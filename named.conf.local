@@ -20,7 +20,7 @@ include "/etc/bind/letsencrypt_U.key";
 
 // SERVER
 //server 89.163.145.170 { keys { envs_msT; }; };    // ns1.envs.net
-server 46.4.121.41 { keys { envs_msT; }; };         // ns2.envs.net
+server 46.224.100.71 { keys { envs_msT; }; };       // ext.envs.net
 server 157.90.196.48 { keys { tilde_msT; }; };      // ns1.tildeverse.net
 
 // TILDE INTRA-NET
@@ -47,7 +47,7 @@ zone "envs.net" {
 	inline-signing yes;
 	serial-update-method increment;
 	notify explicit;
-	also-notify { 46.4.121.41; 157.90.196.48; };
+	also-notify { 46.224.100.71; 157.90.196.48; };
 	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.net. txt; };
 };
@@ -59,7 +59,7 @@ zone "envs.sh" {
 	inline-signing yes;
 	serial-update-method increment;
 	notify explicit;
-	also-notify { 46.4.121.41; 157.90.196.48; };
+	also-notify { 46.224.100.71; 157.90.196.48; };
 	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.sh. txt; };
 };
@@ -71,7 +71,7 @@ zone "envs.tilde" {
 	//dnssec-policy "envs-policy";
 	//inline-signing yes;
 	notify explicit;
-	also-notify { 46.4.121.41; 157.90.196.48; 188.40.73.235; };
+	also-notify { 46.224.100.71; 157.90.196.48; 188.40.73.235; };
 	allow-transfer { 127.0.0.1; key envs_msT; key tilde_msT; 188.40.73.235; };
 	update-policy { grant letsencrypt_U name _acme-challenge.envs.tilde. txt; };
 };
