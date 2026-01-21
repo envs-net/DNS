@@ -1,17 +1,16 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
-envs.net        IN SOA  ns1.envs.net. root.envs.net. (
-                2026011201 ; serial
+envs.net        IN SOA  ns.envs.net. root.envs.net. (
+                2026012004 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
                 28800      ; minimum (8 hours)
                 )
-            NS      ns1.envs.net.
+            NS      ns.envs.net.
             NS      ext.envs.net.
-            NS      ns1.tildeverse.net.
-            A       89.163.145.170
-            AAAA    2001:4ba0:ffa4:180::2
+            A       77.42.48.118
+            AAAA    2a01:4f9:3100:3b2b:0:a:0:2
             MX      10 mail.envs.net.
             MX      20 ext.envs.net.
             TXT "v=spf1 a mx -all"
@@ -33,8 +32,8 @@ envs.net        IN SOA  ns1.envs.net. root.envs.net. (
                 75AEAB0A69BFACA4542F )
             CAA 128 issue "letsencrypt.org"
 $ORIGIN envs.net.
-*               A       89.163.145.170
-                AAAA    2001:4ba0:ffa4:180::2
+*               A       77.42.48.118
+                AAAA    2a01:4f9:3100:3b2b:0:a:0:2
 $TTL 120    ; 2 minutes
 _acme-challenge     TXT "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
 $TTL 28800  ; 8 hours
@@ -55,19 +54,58 @@ _matrix-fed     SRV 10 0 443 matrix.envs.net.
 $ORIGIN envs.net.
 _turn._udp      SRV 10 0 3478 turn.envs.net.
 _turns._udp     SRV 10 0 5349 turn.envs.net.
-akkoma          CNAME   pleroma
-autoconfig      CNAME   mail
-autodiscover    CNAME   mail
-core            A       89.163.145.170
-                AAAA    2001:4ba0:ffa4:180::2
-cinny           CNAME   matrix
-dns             A       5.199.130.141
-drone           A       5.199.130.141
-element         CNAME   matrix
-element-call    CNAME   matrix
+status          CNAME   envs.netlify.app.
+ns              A       77.42.48.118
+mail            A       157.180.15.194
 ext             A       46.224.100.71
                 AAAA    2a01:4f8:c17:7692::1
-git             A   5.199.130.141
+srv             A       157.180.15.214
+                AAAA    2a01:4f9:3100:3b2b::1
+core            A       77.42.48.118
+                AAAA    2a01:4f9:3100:3b2b:0:a:0:2
+webmail         CNAME   mail
+autoconfig      CNAME   mail
+autodiscover    CNAME   mail
+smtp            CNAME   mail
+smtps           CNAME   mail
+imap            CNAME   mail
+imaps           CNAME   mail
+pop             CNAME   mail
+pops            CNAME   mail
+dns             CNAME   srv
+searx           CNAME   srv
+search          CNAME   searx
+pb              CNAME   srv
+pastebin        CNAME   pb
+hedgedoc        CNAME   srv
+codimd          CNAME   hedgedoc
+cryptpad        CNAME   srv
+sandpad         CNAME   cryptpad
+pad             CNAME   cryptpad
+pleroma         A       188.40.204.225
+                AAAA    2a01:4f8:141:220b:0:a:0:18
+akkoma          CNAME   pleroma
+social          CNAME   pleroma
+ssh             A       5.199.139.30
+            SSHFP   1 1 (
+                2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
+            SSHFP   1 2 (
+                EDD078EF499FCE5CA186DAA68E75DC888C69FA358B00
+                2898282DC413F6749458 )
+            SSHFP   3 1 (
+                A6AF5E859AAB4C5AEFEF799E0B5F4150BFCA653A )
+            SSHFP   3 2 (
+                5340BA48A19751F96F7B5EA6DA5E0A58174B2C0456E8
+                EF13886599B17014DA2E )
+            SSHFP   4 1 (
+                26C107E80A42C37290CF17E56571C5D0714DA4BA )
+            SSHFP   4 2 (
+                57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
+                75AEAB0A69BFACA4542F )
+drone           A       157.180.15.197
+                AAAA    2a01:4f9:3100:3b2b:0:a:0:27
+git             A       157.180.15.197
+                AAAA    2a01:4f9:3100:3b2b:0:a:0:26
             SSHFP   1 1 (
                 425F8B1F3D006890B4121B315C6D0A5643699097 )
             SSHFP   1 2 (
@@ -86,44 +124,18 @@ git             A   5.199.130.141
 $ORIGIN git.envs.net.
 _github-challenge-envs-net TXT  "a781f9d6d2"
 $ORIGIN envs.net.
-grafana         CNAME   moni
-hydrogen        CNAME   matrix
-imap            CNAME   mail
-imaps           CNAME   mail
-lag             CNAME   matrix
-mail            A       5.199.136.28
-matrix          A       188.40.204.226
-                AAAA    2a01:4f8:141:220b:0:a:0:14
-moni            A       188.40.204.225
-ns1             A       89.163.145.170
-pleroma         A       188.40.204.225
-                AAAA    2a01:4f8:141:220b:0:a:0:18
-pop             CNAME   mail
-pops            CNAME   mail
-prometheus      CNAME   moni
-riot            CNAME   matrix
-smtp            CNAME   mail
-smtps           CNAME   mail
-social          CNAME   pleroma
 srv01           A       46.4.121.41
                 AAAA    2a01:4f8:141:220b::2
-ssh             A       5.199.139.30
-            SSHFP   1 1 (
-                2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
-            SSHFP   1 2 (
-                EDD078EF499FCE5CA186DAA68E75DC888C69FA358B00
-                2898282DC413F6749458 )
-            SSHFP   3 1 (
-                A6AF5E859AAB4C5AEFEF799E0B5F4150BFCA653A )
-            SSHFP   3 2 (
-                5340BA48A19751F96F7B5EA6DA5E0A58174B2C0456E8
-                EF13886599B17014DA2E )
-            SSHFP   4 1 (
-                26C107E80A42C37290CF17E56571C5D0714DA4BA )
-            SSHFP   4 2 (
-                57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
-                75AEAB0A69BFACA4542F )
-status          CNAME   envs.netlify.app.
+matrix          A       188.40.204.226
+                AAAA    2a01:4f8:141:220b:0:a:0:14
 turn            A       188.40.204.226
                 AAAA    2a01:4f8:141:220b::2
-webmail         CNAME   mail
+cinny           CNAME   matrix
+element         CNAME   matrix
+element-call    CNAME   matrix
+hydrogen        CNAME   matrix
+lag             CNAME   matrix
+riot            CNAME   matrix
+moni            A       188.40.204.225
+grafana         CNAME   moni
+prometheus      CNAME   moni
