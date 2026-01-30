@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns.envs.net. root.envs.net. (
-                2026012004 ; serial
+                2026013001 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -37,6 +37,7 @@ $ORIGIN envs.net.
 $TTL 120    ; 2 minutes
 _acme-challenge     TXT "rS8IyqJqj0FAU7miHtgsyA7EpkLcA7gbXPOVDqrlIs4"
 $TTL 28800  ; 8 hours
+_mta-sts        TXT "v=STSv1; id=20260130T000000Z;"
 _dmarc          TXT "v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc_reports@envs.net"
 modoboa._domainkey  TXT "v=DKIM1;k=rsa;p=MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArRQ52xvv9yjsC9" "+Aj0PYGM30gZLemLl0AiFYRximpnjIJvQthtz3fb4V8chrKNMPQrgz30Bi0OMpoRu3YB57BhVk" "pLDTHkVzyXD5EXuA9BbutjEvAiD3vvAi19RIL+NAc3sDYn+c2pHP648lnN2XLvhwKOAch8lYjC" "4t+olYWv4mqm39rEWXLq5KxDHC3NaleKB3PLxe8GbX0QK5Ma/ZIsAT5vhxQwXcq4p7HgHC3CIB" "+EToNYqAWjQ2OiRHKD91PyBTgpA89QQTAj8xJpGVpYxafv0haTfqXiBUubSXjDOSrQvz/vsm29" "HLf+6abE28CmcKPXw79180zrVkeC/w5kiIgd/SCdMmVoDvtnmU0TrFHD9+kwNzCYT34p9Y35Sb" "l/FwS96d96N3rqEY/lSZONR0+fFsVqwMzdcVxm+Kfkju7rLwPY/HlT50Oj9LV8eol0ZcIDLj0R" "uTPpgW3DagoS20KN5xUkv+nF/KdASWsUhAIBBFWUk/YL737Cl8vi6CiMvCFfeuh9npnFyziKAr" "vVH+I0OiX981QwDptkLcrhVqvmSdXxsjYJ2ApPEXs1D3hvCvhpiUKpLq9RMWTmvr2E7kmG5iJN" "pgd+vVKhRR386URwy6NRhs9W5AadYEUALasxr5rOPabHjhv0nBQlTiG+I8PQ5i9AMyyif2UXf+" "llsCAwEAAQ=="
 _github-challenge-envs-net TXT  "099ae75811"
@@ -63,6 +64,7 @@ srv             A       157.180.15.214
                 AAAA    2a01:4f9:3100:3b2b::1
 core            A       77.42.48.118
                 AAAA    2a01:4f9:3100:3b2b:0:a:0:2
+mta-sts         CNAME   mail
 webmail         CNAME   mail
 autoconfig      CNAME   mail
 autodiscover    CNAME   mail
@@ -72,7 +74,8 @@ imap            CNAME   mail
 imaps           CNAME   mail
 pop             CNAME   mail
 pops            CNAME   mail
-dns             CNAME   srv
+dns             A       157.180.15.214
+                AAAA    2a01:4f9:3100:3b2b:0:a:0:21
 searx           CNAME   srv
 search          CNAME   searx
 pb              CNAME   srv
@@ -86,22 +89,6 @@ pleroma         A       188.40.204.225
                 AAAA    2a01:4f8:141:220b:0:a:0:18
 akkoma          CNAME   pleroma
 social          CNAME   pleroma
-ssh             A       5.199.139.30
-            SSHFP   1 1 (
-                2A3DBBA3587D58C0E5CA18538FB740D4D46A147F )
-            SSHFP   1 2 (
-                EDD078EF499FCE5CA186DAA68E75DC888C69FA358B00
-                2898282DC413F6749458 )
-            SSHFP   3 1 (
-                A6AF5E859AAB4C5AEFEF799E0B5F4150BFCA653A )
-            SSHFP   3 2 (
-                5340BA48A19751F96F7B5EA6DA5E0A58174B2C0456E8
-                EF13886599B17014DA2E )
-            SSHFP   4 1 (
-                26C107E80A42C37290CF17E56571C5D0714DA4BA )
-            SSHFP   4 2 (
-                57E9974EC449FA37C9331C4F943FF6F1DA56A2EBA7B3
-                75AEAB0A69BFACA4542F )
 drone           A       157.180.15.197
                 AAAA    2a01:4f9:3100:3b2b:0:a:0:27
 git             A       157.180.15.197
