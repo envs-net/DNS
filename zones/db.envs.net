@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns.envs.net. root.envs.net. (
-                2026020105 ; serial
+                2026020522 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -41,6 +41,7 @@ _mta-sts        TXT "v=STSv1; id=20260130T000000Z;"
 _dmarc          TXT "v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc_reports@envs.net"
 modoboa._domainkey  TXT "v=DKIM1;k=rsa;p=MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArRQ52xvv9yjsC9" "+Aj0PYGM30gZLemLl0AiFYRximpnjIJvQthtz3fb4V8chrKNMPQrgz30Bi0OMpoRu3YB57BhVk" "pLDTHkVzyXD5EXuA9BbutjEvAiD3vvAi19RIL+NAc3sDYn+c2pHP648lnN2XLvhwKOAch8lYjC" "4t+olYWv4mqm39rEWXLq5KxDHC3NaleKB3PLxe8GbX0QK5Ma/ZIsAT5vhxQwXcq4p7HgHC3CIB" "+EToNYqAWjQ2OiRHKD91PyBTgpA89QQTAj8xJpGVpYxafv0haTfqXiBUubSXjDOSrQvz/vsm29" "HLf+6abE28CmcKPXw79180zrVkeC/w5kiIgd/SCdMmVoDvtnmU0TrFHD9+kwNzCYT34p9Y35Sb" "l/FwS96d96N3rqEY/lSZONR0+fFsVqwMzdcVxm+Kfkju7rLwPY/HlT50Oj9LV8eol0ZcIDLj0R" "uTPpgW3DagoS20KN5xUkv+nF/KdASWsUhAIBBFWUk/YL737Cl8vi6CiMvCFfeuh9npnFyziKAr" "vVH+I0OiX981QwDptkLcrhVqvmSdXxsjYJ2ApPEXs1D3hvCvhpiUKpLq9RMWTmvr2E7kmG5iJN" "pgd+vVKhRR386URwy6NRhs9W5AadYEUALasxr5rOPabHjhv0nBQlTiG+I8PQ5i9AMyyif2UXf+" "llsCAwEAAQ=="
 _github-challenge-envs-net TXT  "099ae75811"
+openpgpkey      TXT ""
 $ORIGIN _tcp.envs.net.
 _autodiscover   SRV 10 0 443 mail.envs.net.
 _imap           SRV 10 0 143 mail.envs.net.
@@ -72,6 +73,7 @@ srv             A       157.180.15.214
                 AAAA    2a01:4f9:3100:3b2b::1
 core            A       77.42.48.118
                 AAAA    2a01:4f9:3100:3b2b:0:a:0:2
+turn            CNAME   core
 mta-sts         CNAME   mail
 webmail         CNAME   mail
 autoconfig      CNAME   mail
@@ -123,8 +125,6 @@ srv01           A       46.4.121.41
                 AAAA    2a01:4f8:141:220b::2
 matrix          A       188.40.204.226
                 AAAA    2a01:4f8:141:220b:0:a:0:14
-turn            A       188.40.204.226
-                AAAA    2a01:4f8:141:220b::2
 cinny           CNAME   matrix
 element         CNAME   matrix
 element-call    CNAME   matrix
