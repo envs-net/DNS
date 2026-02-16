@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns.envs.net. root.envs.net. (
-                2026020701 ; serial
+                2026021603 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -9,6 +9,7 @@ envs.net        IN SOA  ns.envs.net. root.envs.net. (
                 )
             NS      ns.envs.net.
             NS      ext.envs.net.
+            NS      ns1.tildeverse.net.
             A       77.42.48.118
             AAAA    2a01:4f9:3100:3b2b:0:a:0:2
             MX      10 mail.envs.net.
@@ -68,8 +69,8 @@ _turn._udp      SRV 10 0 3478 turn.envs.net.
 _turns._udp     SRV 10 0 5349 turn.envs.net.
 ns              A       77.42.48.118
 mail            A       157.180.15.194
-ext             A       46.224.100.71
-                AAAA    2a01:4f8:c17:7692::1
+ext             A       152.53.154.112
+                AAAA    2a00:11c0:47:3d32:7875:d4ff:fed2:7c61
 srv             A       157.180.15.214
                 AAAA    2a01:4f9:3100:3b2b::1
 core            A       77.42.48.118
@@ -96,8 +97,7 @@ codimd          CNAME   hedgedoc
 cryptpad        CNAME   srv
 sandpad         CNAME   cryptpad
 pad             CNAME   cryptpad
-pleroma         A       188.40.204.225
-                AAAA    2a01:4f8:141:220b:0:a:0:18
+pleroma         CNAME   ext
 akkoma          CNAME   pleroma
 social          CNAME   pleroma
 drone           A       157.180.15.197
