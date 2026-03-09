@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns.envs.net. root.envs.net. (
-                2026021603 ; serial
+                2026030201 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -121,17 +121,3 @@ git             A       157.180.15.197
                 3EEBB036AD2F9A2BA771 )
 $ORIGIN git.envs.net.
 _github-challenge-envs-net TXT  "a781f9d6d2"
-$ORIGIN envs.net.
-srv01           A       46.4.121.41
-                AAAA    2a01:4f8:141:220b::2
-matrix          A       188.40.204.226
-                AAAA    2a01:4f8:141:220b:0:a:0:14
-cinny           CNAME   matrix
-element         CNAME   matrix
-element-call    CNAME   matrix
-hydrogen        CNAME   matrix
-lag             CNAME   matrix
-riot            CNAME   matrix
-moni            A       188.40.204.225
-grafana         CNAME   moni
-prometheus      CNAME   moni
