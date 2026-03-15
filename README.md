@@ -1,17 +1,18 @@
 # envs.net | DNS - bind9 config files
 
-This is the envs.net DNS-Server. (DNSSEC enabled)
+This is the envs.net DNS-Server. (DNSSEC enabled)  
+envs.net has her own dns master & slave server and use an additional slave from tildeverse.
 
 ## NS list
+
 | Name | Address | Location | Type |
 | --- | --- | --- | --- |
-| ns1.envs.net       | `89.163.145.170`               | Düsseldorf    | master |
-| ns2.envs.net       | `46.4.121.41`                  | Falkenstein   | slave  |
-| ns2.envs.net       | `2a01:4f8:141:220b:0:a:0:3`    | Falkenstein   | slave  |
+| ns.envs.net        | `77.42.48.118`               | Helsinki    | master |
+| ext.envs.net       | `152.53.154.112`             | Nürnberg    | slave  |
+| ext.envs.net       | `2a00:11c0:47:3d32:7875:d4ff:fed2:7c61` | Nürnberg | slave |
 | | | | |
-| ns1.tildeverse.net | `192.99.181.240`               | Traverse City | slave  |
-| ns1.tildeverse.net | `2607:5300:60:4f58::240`       | Traverse City | slave  |
+| ns1.tildeverse.net | `157.90.196.48`              | Falkenstein | slave  |
+| ns1.tildeverse.net | `2a01:4f8:252:3e22::48`      | Falkenstein | slave  |
 
 ## master-zones:
 - envs.net
-- envs.sh
