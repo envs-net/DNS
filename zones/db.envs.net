@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 28800  ; 8 hours
 envs.net        IN SOA  ns.envs.net. root.envs.net. (
-                2026030201 ; serial
+                2026040401 ; serial
                 10800      ; refresh (3 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -49,7 +49,6 @@ $ORIGIN _tcp.envs.net.
 _autodiscover   SRV 10 0 443 mail.envs.net.
 _imap           SRV 10 0 143 mail.envs.net.
 _imaps          SRV 10 0 993 mail.envs.net.
-_matrix         SRV 10 0 443 matrix.envs.net.
 _pop3           SRV 10 0 110 mail.envs.net.
 _pop3s          SRV 10 0 995 mail.envs.net.
 _submission     SRV 10 0 587 mail.envs.net.
@@ -57,9 +56,6 @@ _xmpp-client    SRV 10 0 5222 envs.net.
 _xmpps-client   SRV 10 0 5223 envs.net.
 _xmpp-server    SRV 10 0 5269 envs.net.
 _xmpps-server   SRV 10 0 5270 envs.net.
-$ORIGIN _tcp.matrix.envs.net.
-_matrix         SRV 10 0 443 matrix.envs.net.
-_matrix-fed     SRV 10 0 443 matrix.envs.net.
 $ORIGIN envs.net.
 _xmpp-server._tcp.conference SRV 10 0 5269 envs.net.
 _xmpps-server._tcp.conference SRV 10 0 5270 envs.net.
